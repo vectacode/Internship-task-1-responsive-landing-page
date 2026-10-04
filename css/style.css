@@ -1,0 +1,428 @@
+/* ====================== GLOBAL RESET ========================== */
+
+/* Apply these rules to every element */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*========================= BODY ========================= */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background-color: #f8fafc;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    line-height: 1.6;
+}
+
+/*============================ GENERAL LINK STYLING ========================= */
+a {
+    text-decoration: none;
+    color: inherit; /* link to inherit the sorrounding text color */
+}
+
+/* ================================= HEADER / NAVIGATION BAR  */
+.header {
+    display: flex; /* To place logo and navigation side-by-side */
+    justify-content: space-between; /* push logo to the left and navigation to the right */
+    align-items: center;
+    padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* keep it above other page elements */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* ======================================================
+ LOGO
+========================================================= */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.logo span {
+    color: #2563eb;
+} /* This styles only the "NOVA" part of the logo */
+
+/* ===========================================================
+    NAVIGATION LINKS
+    =============================================================*/
+.navbar a {
+    font-weight: 600;
+    transition: color 0.3s ease; /* Smooth animation for hover change */
+}
+.navbar a:hover {
+    color: #2563eb;
+}
+
+/* ==============================================================
+ HERO SECTION
+================================================================= */
+.hero {
+    display: grid; /* Use two-column layout */
+    grid-template-columns: 1fr 1fr; /* Gives the text and image equal space */
+    align-items: center;
+    gap: 50px; /* Space around the content*/
+    padding: 100px 8%; /* Top and Buttom spacing */
+    min-height: 85vh; /* Minimum size of hero section */
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+/* ==============================================================
+HERO CONTENT
+================================================================= */
+.hero-content {
+    max-width: 600px; /*Prevents text from becoming too wide */
+}
+
+.hero-subtitle {
+    color: #2563eb;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* ==============================================================
+MAIN HERO HEADING
+================================================================= */
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.1;
+    color: #111827;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block; /* To put the highlighted text on a new line */
+    color: #2563eb;
+}
+
+/* ================================================================
+HERO DESCRIPTION
+=================================================================== */
+.hero-text {
+    max-width: 550px;
+    font-size: 1.05rem;
+    color: #4b5563;
+    margin-bottom: 30px;
+}
+
+/* ================================================================
+HERO BUTTON CONTAINER
+=================================================================== */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* =================================================================
+GENERAL BUTTON STYLE
+==================================================================== */
+.btn {
+    display: inline-block; /* To allow padding work correctly */
+    padding: 14px 25px;
+    border-radius: 8px; /* Rounded corners */
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+/* ================================================================
+PRIMARY BUTTON
+=================================================================== */
+.primary-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* Primary button hover effect */
+.primary-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-3px); /* This moves the button slightly upward */
+}
+
+/* ===========================================================================
+SECONDARY BUTTON
+============================================================================== */
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+}
+
+/* Secondary button hover effect */
+.secondary-btn:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    transform: translateY(-3);
+}
+
+/* ==============================================================================
+HERO IMAGE
+================================================================================= */
+.hero-image {
+    width: 100%;  /* To make sure the image fits its container */
+}
+
+/* Style for the Hero Image */
+.hero-image img {
+    width: 100%;
+    max-height: 500px; /* To prevent excessive image height */
+    object-fit: cover; /* To help maintain the image's proportions */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Soft shadow around the image */
+}
+
+/* ============================================================
+ABOUT SECTION
+=============================================================== */
+.about {
+    padding: 100px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-heading {
+    max-width: 800px; /* Limit the width of the content */
+    margin: 0 auto; /* To center the container */
+}
+
+/* Small Section label */
+.section-label {
+    color: #2563eb;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font: 0.9rem;
+}
+
+/* Main section heading */
+.section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+/* Highlight text inside section headings */
+.section-heading h2 span {
+    color: #2563eb;
+}
+
+/* Section Paragraph */
+.section-heading > p:last-child {
+    color: #6b7280;
+    font-size: 1.05rem;
+}
+
+/* ================================================================
+SERVICE SECTION
+=================================================================== */
+.services {
+    padding: 100px 8%;
+    background-color: #f8fafc;
+    text-align: center;
+}
+
+/* ================================================================
+ SERVICE CARDS CONTAINER 
+ ================================================================== */
+ .service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 25px;
+    margin-top: 50px;
+ }
+
+ /* ==============================================================
+ SERVICE CARD
+ ================================================================= */
+ .service-card {
+    background-color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .service-card:hover {
+    transform: translateY(-8px); /* Moves card upwards on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+ }
+
+ /* Service icon */
+ .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+ }
+
+ /* Service tittle */
+ .service-card h3 {
+    margin-bottom: 10px;
+    color: #111827;
+ }
+
+ /* Service Description */
+ .service-card p {
+    color: #6b7280;
+ }
+
+ /* ================================================================
+ CALL-TO-ACTION SECTION
+ =================================================================== */
+ .cta {
+    padding: 100px 8%;
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    text-align: center;
+ }
+
+ /* CTA CONTENT WIDTH  */
+ .cta-content {
+    max-width: 750px;
+    margin: 0 auto;
+ }
+
+ /* CTA section label */
+ .cta .section-label {
+    color: #dbeafe;
+ }
+
+ /* CTA heading */
+ .cta h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Highlighted CTA text */
+.cta h2 span {
+    display: block;
+}
+
+/* CTA paragraph */
+.cta p:not(.section-label) {
+    color: #dbeafe;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* ================================================================
+CTA BUTTON
+=================================================================== */
+.cta .primary-btn {
+    background-color: #ffffff;
+    color: #2563eb;
+}
+
+/* CTA button hover */
+.cta .primary-btn:hover {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+}
+
+/* =============================================================
+FOOTER
+================================================================ */
+.footer {
+    padding: 25px 8%;
+    background-color: #111827;
+    color: #d1d5db;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* =============================================================
+RESPONSIVE DESIGN - TABLETS
+Applies when the screen is 900px wide or smaller
+================================================================ */
+@media (max-width: 900px) {
+    .header {
+        padding: 18px 5%; /* Reduce header spacing*/
+    }
+  .hero {
+    padding: 80px 5%; /* Reduce Hero side content spacing */
+    grid-template-columns: 1fr; /* stack the hero content image */
+    text-align: center;
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Make Service Cards use two columns */
+  .service-container {
+    grid-template-columns: repeat(2, 1fr); /* makes service card use two columns */
+  }
+ .about, .services, .cta {
+    padding: 80px 5%; /* Reduce section spacing */
+ }
+
+}
+
+/* ========================================================================
+RESPONSIVE DESIGN - MOBILE PHONES
+Applies when the screen is about 600px smaller or equal
+=========================================================================== */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Stack The logo and Navigation */
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    /* Allow navigation links to wrap*/
+    .navbar {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Stacks CTA buttons vertically */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Make buttons easier to tap */
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px; /* To Protect the button */
+        text-align: center;
+    }
+
+    /* Put Each Service card on its own row */
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about, .services, .cta {
+        padding: 60px 5%;
+    }
+
+    /* Smaller CTA heading */
+    .cta h2 {
+        font-size: 2.2rem;
+    }
+}
